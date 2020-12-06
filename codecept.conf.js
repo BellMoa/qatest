@@ -3,7 +3,7 @@ exports.config = {
   output: './output',
   helpers: {
     WebDriver: {
-      url: 'genjo.ml',
+      url: 'http://genjo.ml/',
       browser: 'chrome',
       port: 4444,
       restart: false,
