@@ -36,12 +36,22 @@ Before(({ I }) => {
 //     I.saveScreenshot('LoginWithNonExistentUser.png');
 // });
 
-Scenario('Checking the login form when using an existing user and incorrect password.', ({ I }) => {
+// Scenario('Checking the login form when using an existing user and incorrect password.', ({ I }) => {
+//     I.fillField('//*[@id="user_login"]','testuser1');
+//     I.fillField('//*[@id="user_pass"]','Teechaep8a');
+//     I.checkOption('//*[@id="rememberme"]');
+//     I.click('//*[@id="wp-submit"]');
+//     I.waitForText('Lost your password?');
+//     I.saveScreenshot('LoginWithExistentUserAndIncorrectPassword.png');
+
+// });
+
+Scenario('Checking the login form when using an existing user and an empty password', ({ I }) => {
+
     I.fillField('//*[@id="user_login"]','testuser1');
-    I.fillField('//*[@id="user_pass"]','Teechaep8a');
+    I.fillField('//*[@id="user_pass"]','');
     I.checkOption('//*[@id="rememberme"]');
     I.click('//*[@id="wp-submit"]');
-    I.waitForText('Lost your password?');
-    I.saveScreenshot('LoginWithExistentUserAndIncorrectPassword.png');
-
+    I.waitForText('The password field is empty.');
+    I.saveScreenshot('LoginWithExistentUserAndEmptyPassword.png');
 });
