@@ -1,6 +1,3 @@
-const { kIsNormalizedAlready } = require("got/dist/source");
-const { before } = require("lodash");
-
 Feature('loginPageTest');
 
 Before(({ I }) => {
@@ -9,7 +6,7 @@ Before(({ I }) => {
 
 });
 
-Scenario('SuccessfulLoginWithFirstUser', ({ I }) => {
+Scenario('SuccessLoginWithCreatedUser', ({ I }) => {
     I.fillField('log' , 'testuser');
     I.fillField('pwd', 'testuser');
     I.checkOption('rememberme');
@@ -20,7 +17,7 @@ Scenario('SuccessfulLoginWithFirstUser', ({ I }) => {
 });
 
 
-Scenario('SuccesfulLoginWithSecondUser', ({ I }) => {
+Scenario('SuccessLoginWithSecondCreatedU', ({ I }) => {
     I.fillField('//*[@id="user_login"]','testuser1');
     I.fillField('//*[@id="user_pass"]','Mae9iGei6m');
     I.checkOption('//*[@id="rememberme"]');
@@ -28,5 +25,4 @@ Scenario('SuccesfulLoginWithSecondUser', ({ I }) => {
     I.saveScreenshot('secondUserSuccess.png');
     I.waitForClickable('#site-footer > div > a');
 });
-
 
