@@ -17,7 +17,7 @@ Scenario('SuccessLoginWithCreatedUser', ({ I }) => {
 });
 
 
-Scenario('SuccessLoginWithSecondCreatedU', ({ I }) => {
+Scenario('SuccessLoginWithSecondCreatedUser', ({ I }) => {
     I.fillField('//*[@id="user_login"]','testuser1');
     I.fillField('//*[@id="user_pass"]','Mae9iGei6m');
     I.checkOption('//*[@id="rememberme"]');
@@ -25,4 +25,5 @@ Scenario('SuccessLoginWithSecondCreatedU', ({ I }) => {
     I.saveScreenshot('secondUserSuccess.png');
     I.waitForClickable('#site-footer > div > a');
 });
+
 
