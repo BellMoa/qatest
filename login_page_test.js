@@ -1,3 +1,4 @@
+const { kIsNormalizedAlready } = require("got/dist/source");
 const { before } = require("lodash");
 
 Feature('loginPageTest');
@@ -8,7 +9,15 @@ Before(({ I }) => {
 
 });
 
-Scenario('test something', ({ I }) => {
-    
+Scenario('SuccessfulLogin', ({ I }) => {
+    I.fillField('log' , 'testuser');
+    I.fillField('pwd', 'testuser');
+    I.checkOption('rememberme');
+    I.click('wp-submit');
+    I.saveScreenshot('success.png');
+    I.waitForClickable('#site-footer > div > a');
 
 });
+
+
+
