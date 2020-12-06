@@ -6,7 +6,7 @@ Before(({ I }) => {
 
 });
 
-Scenario('SuccessLoginWithCreatedUser', ({ I }) => {
+Scenario('Checking the login form when using an existing user', ({ I }) => {
     I.fillField('log' , 'testuser');
     I.fillField('pwd', 'testuser');
     I.checkOption('rememberme');
@@ -17,7 +17,7 @@ Scenario('SuccessLoginWithCreatedUser', ({ I }) => {
 });
 
 
-Scenario('SuccessLoginWithSecondCreatedUser', ({ I }) => {
+Scenario('Checking the login form when using the second existing user', ({ I }) => {
     I.fillField('//*[@id="user_login"]','testuser1');
     I.fillField('//*[@id="user_pass"]','Mae9iGei6m');
     I.checkOption('//*[@id="rememberme"]');
